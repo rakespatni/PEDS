@@ -1,0 +1,29 @@
+
+</html>
+
+<link rel="stylesheet" href="css/main.css" type="text/css" />
+</body>		
+		<!-- footer -->
+		
+			<div id="footerbg">
+				<div class="wrap">
+				
+					<!-- footer links -->
+					<p id="footer_menu">
+						&copy;NITC<br />			
+						<span class="backspace"><a href="http://www.nitc.ac.in">NITC main website</a></span>
+						<a href="credits.php">Credits</a>
+						<a href="nitc.ac.in">Terms and Conditions</a>
+					</p>
+					<!-- /footer links -->
+					
+					<p id="copy"> Website of <span>Physical Education Department</span></p>
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+		
+		<!-- /footer -->
+	
+</body>
+</html>

@@ -1,5 +1,7 @@
 
 <?php
+require($DOCUMENT_ROOT . "/var/www/PEDS/template.php"); 
+
 session_start();
 //$submit=$_POST['submit'];
 //if(isset($submit))
@@ -16,6 +18,9 @@ session_start();
   //echo $news['news']."<br>";
   echo "Posted on:".$date."<br>";
  }
+
+
   mysql_close($con);
 //}
+require($DOCUMENT_ROOT . "/var/www/PEDS/template2.php");
 ?>

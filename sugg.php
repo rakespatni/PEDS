@@ -1,0 +1,20 @@
+<html>
+<head><script>
+function fun()
+{
+alert("1");
+}
+function gun()
+{
+alert("2");
+}
+</script></head>
+<body>
+<form method="post" action="google.com">
+<select name="sel" onclick>
+ <option value="0" onclick="fun()">hi</option>
+ <option value="1" onclick="gun()">gi</option>
+</select>
+</form>
+</body>
+</html>
