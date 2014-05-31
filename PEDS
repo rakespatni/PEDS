@@ -1,0 +1,463 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.10.1deb1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: May 31, 2014 at 02:48 PM
+-- Server version: 5.5.37
+-- PHP Version: 5.3.10-1ubuntu3.11
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `PED1`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `username` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `all_match_record`
+--
+
+CREATE TABLE IF NOT EXISTS `all_match_record` (
+  `tournament_id` int(11) NOT NULL,
+  `match_id` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `team_id_1` int(11) NOT NULL,
+  `team_id_2` int(11) NOT NULL,
+  `team_id_3` int(11) NOT NULL,
+  `team_id_4` int(11) NOT NULL,
+  `team_id_5` int(11) NOT NULL,
+  `team_id_6` int(11) NOT NULL,
+  `team_id_points_1` decimal(10,2) NOT NULL,
+  `team_id_points_2` decimal(10,2) NOT NULL,
+  `team_id_points_3` decimal(10,2) NOT NULL,
+  `team_id_points_4` decimal(10,2) NOT NULL,
+  `team_id_points_5` decimal(10,2) NOT NULL,
+  `team_id_points_6` decimal(10,2) NOT NULL,
+  `winner` int(11) NOT NULL,
+  `MOM` varchar(10) NOT NULL,
+  `g_name` varchar(20) NOT NULL,
+  `g_type` varchar(10) NOT NULL,
+  `match_type` varchar(10) NOT NULL,
+  `MOT` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `all_match_record`
+--
+
+INSERT INTO `all_match_record` (`tournament_id`, `match_id`, `date`, `team_id_1`, `team_id_2`, `team_id_3`, `team_id_4`, `team_id_5`, `team_id_6`, `team_id_points_1`, `team_id_points_2`, `team_id_points_3`, `team_id_points_4`, `team_id_points_5`, `team_id_points_6`, `winner`, `MOM`, `g_name`, `g_type`, `match_type`, `MOT`) VALUES
+(0, 123, '2014-05-31', 1, 2, 0, 0, 0, 0, 9.00, 8.00, 0.00, 0.00, 0.00, 0.00, 0, 'm456', 'cricket', 'Resource i', 'others', ''),
+(0, 345, '2014-05-31', 2, 1, 0, 0, 0, 0, 7.00, 9.00, 0.00, 0.00, 0.00, 0.00, 0, 'm789', 'cricket', 'Resource i', 'others', ''),
+(0, 345, '2014-05-31', 2, 1, 0, 0, 0, 0, 7.00, 9.00, 0.00, 0.00, 0.00, 0.00, 0, 'm789', 'cricket', 'Resource i', 'others', ''),
+(0, 345, '2014-05-31', 2, 1, 0, 0, 0, 0, 7.00, 9.00, 0.00, 0.00, 0.00, 0.00, 0, 'm789', 'cricket', 'team', 'others', ''),
+(3, 1234, '2014-05-31', 2, 1, 0, 0, 0, 0, 8.00, 10.00, 0.00, 0.00, 0.00, 0.00, 0, 'm89', 'administration', 'team', 'others', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `coach`
+--
+
+CREATE TABLE IF NOT EXISTS `coach` (
+  `name` varchar(30) NOT NULL,
+  `id` varchar(10) NOT NULL,
+  `contact` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `consolidated_event_record`
+--
+
+CREATE TABLE IF NOT EXISTS `consolidated_event_record` (
+  `type` varchar(10) NOT NULL,
+  `g_name` varchar(20) NOT NULL,
+  `tournament_name` varchar(20) NOT NULL,
+  `tournament_id` varchar(10) NOT NULL,
+  `tournament_winner` varchar(20) NOT NULL,
+  `MOT` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `course`
+--
+
+CREATE TABLE IF NOT EXISTS `course` (
+  `course_id` varchar(20) NOT NULL,
+  `name` varchar(30) NOT NULL,
+  `fac_contact` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `detailed_event_record`
+--
+
+CREATE TABLE IF NOT EXISTS `detailed_event_record` (
+  `team_id` int(10) NOT NULL,
+  `g_name` varchar(20) NOT NULL,
+  `points_in_this_event` decimal(10,2) NOT NULL,
+  `event_id` varchar(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `detailed_event_record`
+--
+
+INSERT INTO `detailed_event_record` (`team_id`, `g_name`, `points_in_this_event`, `event_id`) VALUES
+(0, 'badminton', 100.00, '100'),
+(77777, 'badminton', 100.00, '100'),
+(0, 'badminton', 100.00, '100'),
+(0, 'badminton', 100.00, '100'),
+(0, 'badminton', 100.00, '100'),
+(0, 'tabletennis', 100.00, '100'),
+(3, 'badminton', 100.00, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faculty`
+--
+
+CREATE TABLE IF NOT EXISTS `faculty` (
+  `name` varchar(30) NOT NULL,
+  `dept` varchar(20) NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `contact` int(11) NOT NULL,
+  `post` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `game`
+--
+
+CREATE TABLE IF NOT EXISTS `game` (
+  `g_name` varchar(20) NOT NULL,
+  `coach` varchar(20) NOT NULL,
+  `g_type` varchar(10) NOT NULL,
+  `captain_roll` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `infrastructure`
+--
+
+CREATE TABLE IF NOT EXISTS `infrastructure` (
+  `type` varchar(20) NOT NULL,
+  `location` varchar(20) NOT NULL,
+  `game` varchar(20) NOT NULL,
+  `count` int(11) NOT NULL,
+  `extra_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `match_points`
+--
+
+CREATE TABLE IF NOT EXISTS `match_points` (
+  `event_id` varchar(20) NOT NULL,
+  `match_id` varchar(10) NOT NULL,
+  `roll` varchar(10) NOT NULL,
+  `contribution` text NOT NULL,
+  `points` decimal(10,0) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `match_record`
+--
+
+CREATE TABLE IF NOT EXISTS `match_record` (
+  `tournament_id` varchar(10) NOT NULL,
+  `match_id` varchar(10) NOT NULL,
+  `date` date NOT NULL,
+  `team1_id` varchar(20) NOT NULL,
+  `team2_id` varchar(20) NOT NULL,
+  `winner` varchar(20) NOT NULL,
+  `MOM` varchar(20) NOT NULL,
+  `g_name` varchar(20) NOT NULL,
+  `g_type` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `news`
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `news_id` int(11) NOT NULL,
+  `post_date` date NOT NULL,
+  `game` varchar(20) NOT NULL,
+  `blurb` text NOT NULL,
+  `news` text NOT NULL,
+  `upcoming_sport_flag` varchar(11) NOT NULL,
+  `event_name` varchar(20) NOT NULL,
+  `event_date` date NOT NULL,
+  `event_type` varchar(20) NOT NULL,
+  `male_female` varchar(20) NOT NULL,
+  `event_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`news_id`, `post_date`, `game`, `blurb`, `news`, `upcoming_sport_flag`, `event_name`, `event_date`, `event_type`, `male_female`, `event_id`) VALUES
+(28, '2014-05-01', 'cricket', 'annual cricket meet', 'there is a cricket tournament planned from 4-5-6 to 5-5-5 . \r\nmatches to be held in nitc cricket ground', 'game', 'cricket meet', '2014-05-30', 'team', '', 0),
+(29, '2014-05-28', 'badminton', 'summer camp for badminton', 'there is going to be a badminton camp organised for 3rd years', 'game', 'summer camp badminto', '2014-06-07', 'Both', '', 0),
+(30, '2014-05-28', 'administration', 'mr dipanjan wins nitc best player', 'Dipanjan saha of mca 5 has won the best player award at the recently concluded all india nitc meet', 'general_inf', '', '0000-00-00', 'team', '', 0),
+(31, '2014-05-28', 'administration', 'mr dipanjan wins nitc best player', 'Dipanjan saha of mca 5 has won the best player award at the recently concluded all india nitc meet', 'general_inf', '', '0000-00-00', 'team', '', 0),
+(32, '2014-05-28', 'administration', 'aaaa', 'aaaaaaaaaaa', 'general_inf', '', '0000-00-00', 'team', '', 0),
+(33, '2014-05-28', 'administration', 'ddddddddd', 'ddddddddddddd', '0', '', '0000-00-00', 'team', '', 0),
+(34, '2014-05-28', 'football', 'annual football tournament', 'hte=hikahfkdjhab', 'game', 'ann aul meet', '2014-04-06', 'team', '', 0),
+(35, '2014-05-28', 'administration', '', '', '0', '', '0000-00-00', 'team', '', 0),
+(36, '2014-05-28', 'administration', '', '', '0', '', '0000-00-00', 'team', '', 0),
+(37, '2014-05-28', 'administration', '', '', '0', '', '0000-00-00', 'team', '', 0),
+(38, '2014-05-29', 'administration', 'cricket tournament', 'cricket matches to be played ajkj alkjlaj', 'game', 'qqqqq', '2014-05-31', 'team', 'female', 0),
+(39, '2014-05-29', 'cricket', 'jkgk', 'hbkjh', 'game', 'hgj', '2014-05-31', 'team', 'female', 0),
+(40, '2014-05-29', 'cricket', 'jkgk', 'hbkjh', 'game', 'hgj', '2014-05-31', 'team', 'Both', 0),
+(41, '2014-05-29', 'badminton', '1111', 'Both types male-female\r\nboth types indi and team', 'game', 'yuva josh', '2014-06-20', 'Both', 'Both', 0),
+(42, '2014-05-29', 'badminton', '2222', 'team:both', 'game', 'vvv', '2014-06-14', 'Both', 'male', 0),
+(43, '2014-05-29', 'badminton', '3333', 'male-female:both\r\nonly', 'game', 'nnn', '2014-05-31', 'individual', 'both2', 0),
+(44, '2014-05-30', 'tennis', 'tennis meet', 'TENNIS MEET FROM 555', 'game', 'tennis tennis', '2014-06-08', 'Both', 'male', 0),
+(1, '2014-05-30', 'tabletennis', 't tenis hhh', 't tenis t tenis', 'game', 'afsadfas', '2014-09-08', 'Both', 'male', 0),
+(2, '2014-05-30', 'administration', 'kya hua', 'tera wiad', 'game', 'wo kasam', '2014-07-06', 'team', 'male', 1),
+(1, '2014-05-30', 'administration', 'fguyf', 'hgjhgjh', 'general_inf', '', '0000-00-00', 'team', 'male', 0),
+(1, '2014-05-30', 'administration', 'guyhgjhg', 'uhjh', 'game', 'ghh', '2014-04-05', 'team', 'male', 1),
+(1, '2014-05-30', 'administration', 'yiouyh', 'ihyoi', 'game', 'uhiu', '2014-04-05', 'team', 'male', 1),
+(2, '2014-05-30', 'administration', 'edtr', 'uyruy', 'game', 'yfh', '2014-04-05', 'team', 'male', 2),
+(1, '2014-05-30', 'administration', 'juhkj', 'iuhiu', 'general_inf', '', '0000-00-00', 'team', 'male', 0),
+(2, '2014-05-30', 'administration', 'ghgfv', 'tyftgf', 'game', 'tdtr', '2012-11-11', 'team', 'male', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `player`
+--
+
+CREATE TABLE IF NOT EXISTS `player` (
+  `name` varchar(20) NOT NULL,
+  `roll` varchar(10) NOT NULL,
+  `dob` date NOT NULL,
+  `gender` char(1) NOT NULL,
+  `dept` varchar(10) NOT NULL,
+  `marks` decimal(10,0) NOT NULL,
+  `course_id` varchar(20) NOT NULL,
+  PRIMARY KEY (`roll`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `player`
+--
+
+INSERT INTO `player` (`name`, `roll`, `dob`, `gender`, `dept`, `marks`, `course_id`) VALUES
+('', '', '1970-01-01', 'm', '', 0, ''),
+('0000', '0000', '1970-01-01', 'm', '0000', 0, ''),
+('jakgjhgashgf', '1111', '0000-00-00', 'f', 'hlkjjhlkj', 0, ''),
+('1111', '22222', '0006-12-07', 'm', '3333', 0, ''),
+('asdf', 'dfgh', '0000-00-00', 'm', 'tyu', 0, ''),
+('iiiii', 'iiii', '2020-07-25', 'm', 'iiiiiii', 0, ''),
+('gggg', 'jjjj', '2014-05-01', 'm', 'qqq', 0, ''),
+('rakesh', 'm120364ca', '0000-00-00', 'c', '11-12-1989', 0, ''),
+('rajan', 'm12345', '0000-00-00', 'c', '22-12-1991', 0, ''),
+('sachin', 'm4455', '0000-00-00', 'm', 'physics', 0, ''),
+('boy', 'roll', '1991-05-15', 'm', 'homme', 0, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `plays_game`
+--
+
+CREATE TABLE IF NOT EXISTS `plays_game` (
+  `team_id` int(10) NOT NULL,
+  `g_name` varchar(20) NOT NULL,
+  `position` varchar(20) NOT NULL,
+  `total_points` decimal(20,0) NOT NULL,
+  `rank` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `plays_game`
+--
+
+INSERT INTO `plays_game` (`team_id`, `g_name`, `position`, `total_points`, `rank`) VALUES
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1),
+(0, 'badminton', 'hhh', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `registration`
+--
+
+CREATE TABLE IF NOT EXISTS `registration` (
+  `game` varchar(20) NOT NULL,
+  `roll` varchar(10) NOT NULL,
+  `event_date` date NOT NULL,
+  `event_name` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `suggestion`
+--
+
+CREATE TABLE IF NOT EXISTS `suggestion` (
+  `date` date NOT NULL,
+  `type` varchar(20) NOT NULL,
+  `advice` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `team`
+--
+
+CREATE TABLE IF NOT EXISTS `team` (
+  `team_id` int(11) NOT NULL,
+  `name` varchar(20) NOT NULL,
+  `indi_or_team` varchar(10) NOT NULL,
+  `team_captain_roll` varchar(11) NOT NULL,
+  `team_captain_contact` int(11) NOT NULL,
+  `g_name` varchar(20) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `rank` int(4) NOT NULL,
+  `p1` varchar(20) NOT NULL,
+  `p2` varchar(20) NOT NULL,
+  `p3` varchar(20) NOT NULL,
+  `p4` varchar(20) NOT NULL,
+  `p5` varchar(20) NOT NULL,
+  `p6` varchar(20) NOT NULL,
+  `p7` varchar(20) NOT NULL,
+  `p8` varchar(20) NOT NULL,
+  `p9` varchar(20) NOT NULL,
+  `p10` varchar(20) NOT NULL,
+  `p11` varchar(20) NOT NULL,
+  `p12` varchar(20) NOT NULL,
+  `p13` varchar(20) NOT NULL,
+  `p14` varchar(20) NOT NULL,
+  `p15` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `team`
+--
+
+INSERT INTO `team` (`team_id`, `name`, `indi_or_team`, `team_captain_roll`, `team_captain_contact`, `g_name`, `type`, `rank`, `p1`, `p2`, `p3`, `p4`, `p5`, `p6`, `p7`, `p8`, `p9`, `p10`, `p11`, `p12`, `p13`, `p14`, `p15`) VALUES
+(0, '', '', '0', 0, '', '', 0, 'dd', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'hi', '', '0', 566, 'ki', 'mi', 6, 'dd', 'sss', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'hi', '', '0', 566, 'ki', 'mi', 6, 'dhgfd', 'hgfhgf', 'hghgfhgf', 'hgfhg', 'fhgf', 'hgf', 'hgf', 'hgf', 'hgf', 'hgf', 'hgf', 'hgf', 'hg', 'fhg', 'fhg'),
+(0, '', '', '0', 0, '', '', 0, 'rakesh', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'hi', '', '0', 566, 'ki', 'mi', 6, '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'hi', '', '0', 566, 'ki', 'mi', 6, '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'hi', '', '0', 566, 'ki', 'mi', 6, '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'mca boys', '', '65687687', 0, '', '', 6, 'hlh', 'jkhkj', 'j', 'hkjh', 'kj', 'hkj', 'hk', 'h', 'kh', 'k', 'hk', 'hk', 'hk', 'h', 'k'),
+(0, '123', '', '4567', 23456, 'cricket', '', 6, 'hgg', 'hjgjhg', 'kujkj', 'nn', 'lklk', 'lk', 'lk', 'nl', 'lk', 'nlk', 'nlk', 'l', ';l', 'u', 'uy'),
+(0, '....', '', '23456', 7890, 'cricket', 'female', 6, 'qwer', 'wefr', 'g', 'gvbGBHH', 'UB', 'NNjh', 'H', 'VU', 'jj', 'p', 'B', 'B', '[]o', 'j', 'k'),
+(0, '', '', '0', 0, '', '', 0, '324', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', '', '6799', 0, '', '', 0, '67', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'mmm', '', '345', 0, 'badminton', '', 6, 'wert', 'f', 'g', 'fg', 'g', 'gh', 'h', 'gh', 'bhb', 'h', 'h', 'jbjb', 'jbk', 'uh', 'joi'),
+(0, 'rakespatni', '', '345', 6789, 'badminton', '', 6, 'edrt', 'fr', 'u', 'yug', 'yu', 'uy', 'ui', 'jk', 'ty', 'po', 'jk', 'ty', 'po', 'kl', 'gh'),
+(0, '', '', '120', 0, '', '', 0, '364', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', '', '999', 0, '', '', 0, 'raka', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'fema', '', '45', 56, 'badminton', 'female', 1, 'yhb', 'jhb', '', 'bkjb', 'kb', 'kjbkj', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', '56', 0, '', '', 0, '34', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'b<b', '', '0', 88, 'badminton', 'male', 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'b<b', '', '888', 88, 'badminton', 'male', 1, '', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'yguyj', '', '3333', 0, 'badminton', 'male', 1, 'gyyhfg', 'ytfyuh', 'tfty', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', '222', 0, '', '', 0, '444', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'patni', 'team', '0', 0, 'badminton', 'male', 1, 'gyyhfg', 'ytfyuh', 'tfty', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'patni', 'team', 'm120364ca', 8888, 'badminton', 'male', 1, 'gyyhfg', 'ytfyuh', 'tfty', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'ggg', 'team', '555', 55555555, 'badminton', 'male', 1, 'ugiug', 'iuhgiu', 'hgiug', 'iugiu', 'gik', 'gk', 'gjh', 'gjh', 'gjh', 'gjh', 'gjh', 'gjh', 'gjhg', 'jh', 'hg'),
+(0, 'india', 'team', '5556', 9879, 'badminton', 'male', 1, 'qwew', 'sadsdf', 'tytg', 'kllk', 'iujoi', 'cxbv', 'nbmn', 'jbkj', 'kjb', 'll', 'l', 'lkn', 'b', 'knlk', 'nn'),
+(0, 'hh', 'team', '56', 88, 'badminton', 'male', 1, 'yu', 'uy', 'hj', 'ui', 'jk', 'io', 'jku', 'uih', 'hyu', 't', 'u', 'i', 'o', 'p', 'j'),
+(0, 'hyutut', 'team', '56', 88, 'badminton', 'male', 1, 'yu', 'uy', 'hj', 'ui', 'jk', 'io', 'jku', 'uih', 'hyu', 't', 'u', 'i', 'o', 'p', 'j'),
+(0, 'hyutut', 'team', '56', 88, 'badminton', 'male', 1, 'yu', 'uy', 'hj', 'ui', 'jk', 'io', 'jku', 'uih', 'hyu', 't', 'u', 'i', 'o', 'p', 'j'),
+(0, 'man utd', 'team', 'm12324', 667, 'badminton', 'male', 1, 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'a', 's', 'd', 'f', 'g', 'm'),
+(0, 'manu', 'team', 'm123248', 76767, 'badminton', 'male', 1, 'qj', 'w', 'kj', 'j', 'jjk', 'kjm', 'mbvc', 'jkvv', 'mm,n', 'jbm,l', 'k', 'd', 'f', 'g', 'm'),
+(0, 'manu', 'team', 'm123248', 76767, 'badminton', 'male', 1, 'qj', 'w', 'kj', 'j', 'jjk', 'kjm', 'mbvc', 'jkvv', 'mm,n', 'jbm,l', 'k', 'd', 'f', 'g', 'm'),
+(0, 'manu', 'team', 'm123248', 76767, 'badminton', 'male', 1, 'qj', 'w', 'kj', 'j', 'jjk', 'kjm', 'mbvc', 'jkvv', 'mm,n', 'jbm,l', 'k', 'd', 'f', 'g', 'm'),
+(0, 'manutt', 'team', 'm123248', 76767, 'badminton', 'male', 1, 'qj', 'w', 'kj', 'j', 'jjk', 'kjm', 'mbvc', 'jkvv', 'mm,n', 'jbm,l', 'k', 'd', 'f', 'g', 'm'),
+(0, '', 'individual', '45678', 0, '', '', 0, 'rakesh', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', '4567890', 0, '', '', 0, 'rakeshpatni', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', '8714257530', 0, '', '', 0, 'm120364ca', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', '9999999999', 1111111111, '', '', 0, '9999999999', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', 'm123', 456, '', '', 0, 'm123', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', 'm1111', 1111, '', '', 0, 'm1111', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', '77777', 88888, '', '', 0, '77777', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', 'm123', 1111, '', '', 0, 'm123', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', 'm123', 1111, '', '', 0, 'm123', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', 'm123', 1111, '', '', 0, 'm123', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', 'm123', 1111, '', '', 0, 'm123', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, '', 'individual', 'm12345', 12345, '', '', 0, 'm12345', '', '', '', '', '', '', '', '', '', '', '', '', '', ''),
+(0, 'team force ', 'team', 'm16', 5678, 'administration', 'male', 1, 'jkjlkj', 'lkl', 'jlkjlk', '', '', '', '', '', '', '', '', '', '', '', ''),
+(1, 'force india', 'team', 'm120987', 456798, 'administration', 'male', 1, 'qwe', 'rty', 'yui', '', '', '', '', '', '', '', '', '', '', '', ''),
+(2, 'yuy', 'team', '5676', 8787, 'administration', 'male', 1, 'i', 'kj', 'b', '', '', '', '', '', '', '', '', '', '', '', ''),
+(3, '', 'individual', 'rakesh patn', 87142575, '', '', 0, 'rakesh patni kangla', '', '', '', '', '', '', '', '', '', '', '', '', '', '');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
