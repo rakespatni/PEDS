@@ -27,7 +27,7 @@ session_start();
   echo "Posted on:".$date."<br>";
   if($tag=="game")
    
-  echo "<a href='registration/player_regis.php?event_type=".$event_type."&&event_date=".$event_date."&&male_female=".$male_female."&&game_name=".$game_name."&&event_id=".$event_id."'>"."register"."</a><br>";
+  echo "<a href='existing.php?event_type=".$event_type."&&event_date=".$event_date."&&male_female=".$male_female."&&game_name=".$game_name."&&event_id=".$event_id."'>"."register"."</a><br>";
  }
  echo "</div>";
 
