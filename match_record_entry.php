@@ -1,0 +1,84 @@
+<?php
+session_start();
+$_SESSION['event_id']=$_GET['event_id'];       //event_id available in news section
+$_SESSION['event_type']=$_GET['event_type'];   //team/individual
+$_SESSION['game_name']=$_GET['game_name'];
+$_SESSION['male_female']=$_GET['male_female'];
+$_SESSION['event_date']=$_GET['event_date'];
+
+echo "<html>";
+      
+     echo"<script>
+
+        alert('hi');
+        function hide()
+         {
+          div1=document.getElementById('mot');
+          div1.style.display='none';         
+  
+         }
+        function show(a)
+         {
+          if(a=='Final')
+          {
+            div1=document.getElementById('mot');
+            div1.style.display='block';
+          }
+         else
+          {
+           div1=document.getElementById('mot');
+           div1.style.display='none';
+            
+          }
+         }";
+        echo"</script>
+       <body onload='hide()'>
+        <form method='post' action='match_record_post.php'>  
+         <div id='match_record_1'>
+         
+         <p>Enter match_id<br>
+         
+          <input type='text' name='match_id'></p><br>
+                     
+
+          <input type='date' name='match_date'><br>";
+         if(($_SESSION['game_name']=="swimming")||($_SESSION['game_name']=="athletics"))
+       {
+         echo" <p>ENTER PARTICIPANTS TEAM ID'S<br>
+          <input type='text' name='team1'>
+          <input type='text' name='team1_points'><br>
+          <input type='text' name='team2'>
+          <input type='text' name='team2_points'><br></p>
+          <p><input type='text' name='team3'>
+          <input type='text' name='team3_points'><br>
+          <input type='text' name='team4'>
+          <input type='text' name='team4_points'><br>
+          <input type='text' name='team5'>
+          <input type='text' name='team5_points'><br>
+          <input type='text' name='team6'>
+          <input type='text' name='team6_points'></p><br>";}
+         else
+         {
+          echo"ENTER PARTICIPANTS TEAM ID'S<br><input type='text' name='team1'>
+          <input type='text' name='team1_points'><br>
+          <input type='text' name='team2'>
+          <input type='text' name='team2_points'><br></p>";
+         }
+         echo"<p>Enter winner's roll number<br>
+         <input type='text' name='match_winner'><br></p>
+         <p>Enter the Man of match's roll number<br>
+         <input type='text' name='MOM'></p><br>
+ 
+         
+         
+        <select name='match_type' onchange='show(this.value)'><option value='0'>--</option><option value='others'>Others</option><option value='Final'>Final</option></select>
+         <p id='mot'>Enter the man of the tournament<br>
+         <input type='text' name='MOT' id='MOT'></p>
+         <input type='submit' value='post result'>
+       </div>
+      </form>
+    </body>
+   </html>";
+?>
+
+

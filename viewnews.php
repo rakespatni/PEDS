@@ -8,7 +8,7 @@ session_start();
 //{
  require_once "/var/www/PEDS/player/dbconnect.php";
  $row=mysql_query("select * from news ");
- echo "<div id='viewnews'>";
+ echo "<div id='viewnews'>"; 
  while($news=mysql_fetch_array($row))
  {
   $blurb=$news['blurb'];
@@ -18,12 +18,16 @@ session_start();
   $event_type=$news['event_type'];
   //$_SESSION['abc']=$news['news_id'];
   $event_date=$news['event_date'];
+  $male_female=$news['male_female'];
+  $game_name=$news['game'];
+  $event_id=$news['event_id'];
+  echo $male_female;
   echo "<u >".'<a id="news_link" href="shownews.php?id='.$id.'">'.$blurb."</a></u><br>";
   echo $blurb."<br>";
   echo "Posted on:".$date."<br>";
   if($tag=="game")
    
-  echo "<a href='registration/player_regis.php?event_type=".$event_type."&&event_date=".$event_date." '>"."register"."</a><br>";
+  echo "<a href='registration/player_regis.php?event_type=".$event_type."&&event_date=".$event_date."&&male_female=".$male_female."&&game_name=".$game_name."&&event_id=".$event_id."'>"."register"."</a><br>";
  }
  echo "</div>";
 
