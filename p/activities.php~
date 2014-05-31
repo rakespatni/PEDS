@@ -1,0 +1,197 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<title>Physical Education Depatment | NIT Calicut</title>
+	<script type="text/javascript" src="js/jquery-1.4.1.min.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>
+	<script type="text/javascript" src="js/slideshow.js"></script>
+	<script type="text/javascript" src="js/cufon-yui.js"></script>
+	<script type="text/javascript" src="js/Arial.font.js"></script>
+	<script type="text/javascript">
+		Cufon.replace('h1,h2,h3,h4,h5,#menu,#copy,.blog-date');
+	</script>
+	<script type="text/javascript" src="js/fancyzoom.min.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		$(document).ready(function() {
+			$('div.photo a').fancyZoom({directory: 'images/zoom', scaleImg: true, closeOnClick: true});
+		});
+	</script>
+	<style>
+	.backspace
+	{margin-left:-10px;}
+	#contents{
+		width:936px;
+		margin-left:25px;
+		color:#245d64;
+	}
+	.MAINFINAL{
+		border:2px solid #a8d1d5;
+	}
+	.MAINFINAL img{
+		height:400px;
+		width:700px;
+		align:center;
+	}
+	.type{
+		width:200px;
+		background-color:#69cce5;
+	}
+	.events{
+		width:200px;
+		background-color:#a8d1d5;
+	}
+	.MAINFINAL table{
+		align:center;
+	}
+	
+	</style>
+	<link rel="stylesheet" href="css/main.css" type="text/css" />
+</head>
+<body>
+		
+	<div id="banner">
+		<img src="images/banner.jpg"></img>
+	</div>
+	<div id="bg">
+		<div class="wrap">
+			
+			<!-- logo -->
+			<h1><a href="index.php">Events images</a></h1>
+			<!-- /logo -->
+			
+			
+			
+			<!-- pitch -->
+			<div id="pitch">
+				<div id="slideshow">
+					
+					<!-- 1st frame -->
+					<div class="active">
+						<img src="images/pitch/11.jpg" alt="" />
+						<div class="overlay transparent">
+							<h2>Description 1</h2>
+							<p>Desc1</p>
+						</div>
+					</div>
+					<!-- /1st frame -->
+					
+					<!-- 2nd frame -->
+					<div>
+						<img src="images/pitch/22.jpg" alt="" />
+						<div class="overlay transparent">
+							<h2>Description 2</h2>
+							<p>DESC2</p>
+						</div>
+					</div>
+					<!-- /2nd frame -->
+					
+					<!-- 3rd frame -->
+					<div>
+						<img src="images/pitch/33.jpg" alt="" />
+						<div class="overlay transparent">
+							<h2>Description 3</h2>
+							<p>Desc3</p>
+						</div>
+						<!--<p class="arrow"><a href="#"></a></p>-->
+					</div>
+					<!-- 3rd frame -->
+					
+				</div>
+			</div>
+			
+			<div id="menutab">
+  			     <div id="Menu">	
+				 <ul><li><a current href="index.php" target="_self">Home</a></li></ul>
+			    	 <ul><li><a href="#" target="_self">PEOPLE</a>
+			    	 	<ul>
+			    	 		<li><a href="people.php">Faculty</a></li>
+			    	 		<li><a href="staff.php">Staff</a></li>
+			    	 	</ul>
+			    	 	</li>
+			    	 </ul>
+			    	 <ul>
+			    	 	<li><a href="#" >TEAMS</a>
+			    	        <ul >
+			    	        	<li><a href="">Atheletics</a></li>
+			    	        	<li><a href="#">Football</a></li>
+			    	        	<li><a href="#">Vollyball</a></li>
+			    	        	<li><a href="#">Cricket</a></li>
+			    	        	<li><a href="#">Badminton</a></li>
+			    	        	<li><a href="#">Handball</a></li>
+			    	        	<li><a href="#">Hockey</a></li>
+			    	        </ul>
+			    	        </li>
+			    	 </ul>
+			    	 <ul>
+			    	 	<li><a href="#" >RANKING</a>
+			    	        <ul >
+			    	        	<li><a href="">Atheletics</a></li>
+			    	        	<li><a href="#">Football</a></li>
+			    	        	<li><a href="#">Vollyball</a></li>
+			    	        	<li><a href="#">Cricket</a></li>
+			    	        	<li><a href="#">Badminton</a></li>
+			    	        	<li><a href="#">Handball</a></li>
+			    	        	<li><a href="#">Hockey</a></li>
+			    	        </ul>
+			    	        </li>
+			    	 </ul>
+			    	 <ul><li><a href="news.php" >NEWS</a></li>
+			    	        <li><a href="./history.php" target="_self">HISTORY</a></li></ul>
+			    	 <ul><li><a href="course.php" target="_self">COURSE</a></li></ul>
+			    	 <ul><li><a href="facilities.php" target="_self">FACILITIES</a></li></ul>
+			    	 <ul><li><a href="activities.php" target="_self">ACTIVITIES</a></li></ul>    	
+    				 <br class="clearFloat" />
+			</div>
+			<div class="MAINFINAL">
+				<div id="contents">
+					<h2>Co-curricular programme for UG, PG and Doctoral students</h2>
+					<p>The major attraction of the campus, the voluntary participation programme goes on irrespective of semesters. Regular practice is the main feature in every major game under faculty guidance and supervision. Institute teams are picked, trained and exposed to various levels of tournaments, namely District, State, Invitation, Inter-university, Inter-NIT and so on.<br><br>
+					   Official Intramural Interclass tournaments are conducted every year for boys and girls in all major games and Athletics. In addition, there are mass-participation open-to-all tournament activities in the campus that attract good student
+	percentage.<br><br>
+					   All the above programmes go to help in attaining the objective of “Total Fitness in the Campus”. The OT and Credit programmes are seen to inculcate ‘fitness awareness’ among students and has resulted in enhancing the student participation to above 40 %, an all-time high for an education institution.<br><br>
+					   <table>
+					   <tr><td class="type">Internal Official</td><td class="type">Internal Optional</td><td class="type">Interscholastic</td><td class="type">Duration</td><td class="type">Participation %age</td></tr>
+					   <tr><td class="event">1) Intramural Inter-year wise Games & Athletics<br>
+				       2) Selections of Institute teams, Coaching & Training
+					    </td>
+					    <td class="event">Open & Mass - participation activities in Football, Cricket, Hockey, Vollyball, Basketball, Tennis, Badminton, Table Tennis, Chess, Ahthletics,Swimming Fitness and Yoga</td>
+					    <td class="event">1) Home & away <br>2)District<br>3)Championships<br>4)State Championships<br>5)Inter University<br>6)Tourneys Inter NIT<br>7)Tournaments Open<br> 8)Invitation tournaments</td>
+					    <td class="event">Whole year through both Winter and Monsoon Semesters</td>
+					    <td class="event">45% from among B.Tech,B.Arch, M.Tech,MCA, MBA, M.Sc and Ph.D. Students</td>
+					    </tr>
+					   
+					   <table>
+					</p>		
+				</div>
+			</div>
+			<!-- /main -->
+			
+		
+		</div>
+			
+		<!-- footer -->
+		<div id="footer">
+			<div id="footerbg">
+				<div class="wrap">
+				
+					<!-- footer links -->
+					<p id="footer_menu">
+						&copy;NITC<br />			
+						<span class="backspace"><a href="http://www.nitc.ac.in">NITC main website</a></span>
+						<a href="credits.php">Credits</a>
+						<a href="#">Terms and Conditions</a>
+					</p>
+					<!-- /footer links -->
+					
+					<p id="copy"> Website of <span>Physical Education Department</span></p>
+					
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<!-- /footer -->
+		
+	</div>
+</body>
+</html>
