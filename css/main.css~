@@ -5,16 +5,16 @@
 	height: 50px;
 	
 	margin-left:-150px;
-} 
-#main div{
-	color:#245d64;
-	border: 3px solid #a8d1d5;
-	margin-top:2cm;
+}
+#slideshow
+{
+	border:3px ridge #a8d1d5;
+	z-index:1000;
 }
 #banner img
 {
 	height:180;
-	width:1275;
+	width:1270;
 }
 #Menu ul li
 {
@@ -26,6 +26,7 @@
 	position:relative;
 }
 #Menu{
+	width:936px;
 	margin:0;
 	padding:0;
 	border: 2px solid #245d64;
@@ -84,82 +85,6 @@
 	padding:0; 
 }
 /*****************************/
-/*#menu1 {
-	width: 1125px;
-	height: 50px;
-	/*margin: 0 auto;*/
-	/*margin-left:-20px;
-	padding: 0 30px;
-	/*border: 1px solid #245d64;
-	/*background-color:#a8d1d6;
-	background: url(../images/menuback.jpg) repeat;
-}*//*
-#menu1 ul { 
-	float: left; 
-}
-#menu1 {
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-}
-
-#menu1 li{
-	padding: 0px;
-	margin: 0px;
-	display: inline;
-}
-
-#menu1 li a{
-	float: left;
-	display: block;
-	width: 124px;
-	height: 38px;
-	padding: 12px 0 0 0;
-	margin-right: 1px;
-	text-align: center;
-	font-size: 16px;
-	text-decoration: none;
-	color: #245d64;	
-	font-weight: normal;
-	outline: none;
-}
-
-#menu1 li a:hover, #menu1 li .current{
-	color: #fff;
-	background: url(../images/menu_hover.png) no-repeat;
-}
-
-/*css for sub menus
-#menu1 li ul { 
-	top: 98px;
-	background: url(../images/dot.png); 
-	padding: 3px;
-	font-size: .92em; 
-	position: absolute; 
-	display: none; 
-	z-index: 100; 	
-}
-#menu1 li ul li { 
-	float: none; 
-	display: inline; 
-	margin: 0; 
-	padding: 0; 
-	clear: left;
-}
-
-#menu1 li ul li a { 
-	color: #fff;
-	margin: 4px; 
-	white-space: nowrap;
-	padding: 8px;	
-}
-#menu1 li ul li a:hover {
-	background: url(../images/menu_hover.png); 
-	color: #fff;
-}
-*/
-/* sub-menus css ends here */
-/* reset */
 *{
 	margin:0;
 	padding:0;
@@ -179,9 +104,9 @@ img {
 }
 
 body { 
-	font: .8em Arial, Verdana, Tahoma, Sans-Serif; 
-	/*background: #f4f4f4 url(../images/bgtile.jpg) repeat-x;*/ 
-	color: #555; 
+	/font: .8em Arial, Verdana, Tahoma, Sans-Serif; 
+	/*background: #f4f4f4 url(../images/bgtile.jpg) repeat-x;
+	color: #555; */
 }
 
 /* typography and links */
@@ -202,20 +127,22 @@ h1, h2, h3, h4, h5 {
 h1 { 
 	float: left; 
 	font-size: 2.1em; 
-	color: #fff;
+	color: #245d64;
 	letter-spacing: -1.4px;	
 	margin: 0 0 30px 0;
 	padding: 34px 0 0 10px;
 }
 h1 a { 
-	color: #fff; 
+	color: #3108ff; 
 }
 h2 { 
 	margin: 0 0 15px; 
 	font-size: 1.9em; 
-	color: #000; 
+	color: #245d64; 
+	text-decoration:underline;
 }
 h2.inner { 
+	text-decoration:underline;
 	border-bottom: 1px solid #ddd; 
 	margin: 0 0 25px; 
 	padding: 0 0 10px; 
@@ -224,22 +151,22 @@ h3 {
 	margin: 0 0 7px;  
 	font-size: 1.3em; 
 	clear: both; 
-	color: #000; 
+	color:#245d64; 
 	line-height: 1.3em; 
 }
 h4 { 
 	margin: 0 0 10px; 
 	font-size: 1.2em; 
-	color: #000; 
+	color: #245d64; 
 }
 h5 {
 	font-size: 1em;
-	color: #eee; 
+	color: #245d64; 
 	margin: 0 0 14px;
 }
 
 #bg { 
-	background-color:#ffffff;
+	background:url(../images/blend1.jpg) repeat;
 	/*background: url(../images/bg.jpg) no-repeat center top;*/ 
 }
 
@@ -252,16 +179,21 @@ h5 {
 /* pitch slideshow */
 #pitch { 
 	clear: both; 
-	height: 296px; 
+	height: 303px; 
 	background: url(../images/shadow.png) no-repeat left bottom;
 	margin: 0 0 25px;
+	
 }
 #slideshow {
+    background-color:white;
     position:relative;
-    height: 310px;
+    height: 300px;
+    z-index:100;
+    /*border-radius:50px;*/
 }
 #slideshow img {
 	float: left;
+	z-index:100;
 }
 #slideshow div {
     position: absolute;
@@ -301,7 +233,8 @@ h5 {
 	clear: both;
 	background: #fff;
 	padding: 16px;
-	width: 300px;
+	width: 175px;
+	height:50px;
 }
 
 #slideshow:hover .arrow {
@@ -340,11 +273,19 @@ h5 {
 	clear: left; 
 	float: left; 
 	width: 680px;
-	border-right: 1px dotted #ddd;
+	/*border-right: 1px dotted #ddd;*/
 	padding: 0 30px 0 0;
 	margin: 0 0 30px;
+	color:#245d64;
+	border: 3px solid #a8d1d5;
+	margin-top:2cm;
+	z-index:1000;
+	/*background:white;*/
 }
-
+#main div{
+	
+	margin-top:2cm;
+}
 #intro { 
 	padding: 0 0; 
 	margin: 0 0 25px;
@@ -466,6 +407,7 @@ h5 {
 	width: 220px; 
 	font-size: 1.2em;
 	border:5px double #a8d1d5;
+	background:white
 }
 #side h4 {
 	margin: 0 0 23px;
@@ -474,6 +416,7 @@ h5 {
 #login
 {
 	border:5px double #a8d1d5;
+	background-color:white;
 }
 .left
 {
@@ -590,33 +533,4 @@ input.submit {
 }
 #copy span { 
 	color: #999; 
-}
-/*rakesh*/
-#news_upload{
-     /* float:center;*/
-      width:800px;
-      color:#000000; 
-      margin-left:150px; 
-}
-#ack{
-      width:500px;
-      color:red;
-      margin-left:150px;
-      font-size:20px;
-}
-#viewnews{
-      width:800px;
-      color:red;
-      margin-left:250px;
-      font-size:20px;
-}
-#news_link
-{
-      color:green;
-      
-}
-#rank
-{
-      margin-left:250px;
-      height:100px;
 }
