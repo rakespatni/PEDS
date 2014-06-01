@@ -1,7 +1,7 @@
 
 <?php
 require($DOCUMENT_ROOT . "template.php");
-echo "hi";
+//echo "hi";
 session_start();
 //$submit=$_POST['submit'];
 //if(isset($submit))
@@ -21,13 +21,13 @@ session_start();
   $male_female=$news['male_female'];
   $game_name=$news['game'];
   $event_id=$news['event_id'];
-  echo $male_female;
-  echo "<u >".'<a id="news_link" href="shownews.php?id='.$id.'">'.$blurb."</a></u><br>";
-  echo $blurb."<br>";
-  echo "Posted on:".$date."<br>";
+  //echo $male_female;
+  echo "<u >".'<a id="news_link" href="shownews.php?news_id='.$id.'">'.$blurb."</a></u><br>";
+  //echo $blurb."<br>";
+  echo "Posted on:&nbsp&nbsp".$date."<br><br>";
   if($tag=="game")
    
-  echo "<a href='existing.php?event_type=".$event_type."&&event_date=".$event_date."&&male_female=".$male_female."&&game_name=".$game_name."&&event_id=".$event_id."'>"."register"."</a><br>";
+  echo "<a href='existing.php?event_type=".$event_type."&&event_date=".$event_date."&&male_female=".$male_female."&&game_name=".$game_name."&&event_id=".$event_id."'>"."Click to register"."</a><br><br><br>";
  }
  echo "</div>";
 
