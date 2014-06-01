@@ -50,6 +50,7 @@ if(isset($submit))
 		$event_type=$_POST['event_type'];
                 require_once "/var/www/PEDS/player/dbconnect.php";
                 //$post=mysql_query("select * from plays_game");
+		echo "<div id='rank_php'>";
                 echo "<table border='1'>
                       <tr><th>team name</th><th>Points</th><th>Rank</th></tr>";
                 //while($row=mysql_fetch_array($post))
@@ -76,6 +77,7 @@ if(isset($submit))
                                }
                          
                        echo "</table>";
+		  echo "</div>";
          }
 mysql_close($con);
 ?>

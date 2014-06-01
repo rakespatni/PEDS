@@ -77,6 +77,7 @@ if(isset($submit))
                                }
                          
                        echo "</table>";
+                  echo "hi";
 		  echo "</div>";
          }
 mysql_close($con);
