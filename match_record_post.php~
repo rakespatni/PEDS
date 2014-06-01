@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once "/var/www/PEDS/player/dbconnect.php";
+$game_name=$_SESSION['game_name'];
 $match_id=$_POST['match_id'];
 $date=$_POST['match_date'];
 $team1_id=$_POST['team1'];
@@ -24,6 +25,11 @@ $team6_points=$_POST['team6_points'];
 $a=array($team1_id,$team2_id,$team3_id,$team4_id,$team5_id,$team6_id);
 $b=array($team1_points,$team2_points,$team3_points,$team4_points,$team5_points,$team6_points);
 
+for($i=0;$i<6;$i++)
+ {
+  $c[$i]=$b[$i]-5.0;
+ }
+
 $winner=$_POST['winner'];
 $mom=$_POST['MOM'];
 
@@ -44,11 +50,33 @@ $post=mysql_query("insert into all_match_record values('$tournament_id','$match_
                    '$team3_id','$team4_id','$team5_id','$team6_id','$team1_points','$team2_points',
                '$team3_points','$team4_points','$team5_points','$team6_points','$winner','$mom','$game_name','$game_type','$match_type','$MOT')") or die(mysql_error());
 
-//entering into detailed-event _record i,e event wise
+//entering into detailed-event _record i,e event wise 
 
 for($i=0;$i<6;$i++)
 {
-mysql_query("update detailed_event_record set points_in_this_event='$b[$i]' where team_id='$a[$i]' and event_id='$tournament_id' ");
+	$post=mysql_query("select * from detailed_event_record where team_id='$a[$i]' and event_id='$tournament_id' ") 
+                         or die(mysql_error());
+	    if($post)
+		  {
+		     while($row=mysql_fetch_array($post))
+			 {
+			  $event_points=$row['points_in_this_event'];
+			  $b[$i]=$event_points+(0.2*$c[$i]);
+			 }
+		     mysql_query("update detailed_event_record set points_in_this_event='$b[$i]' where team_id='$a[$i]' 
+                                and event_id='$tournament_id' ") or die(mysql_error());
+	          }
+	//updating the plays_game table also
+        $post=mysql_query("select * from plays_game where team_id='$a[$i]' and game_name='$game_name' ") or die(mysql_error());
+            if($post)
+		  {
+		      while($row=mysql_query($post))
+			{
+			  $total_points=$row['total_points'];
+			  
+
+}
+
 
 
 mysql_close($con);

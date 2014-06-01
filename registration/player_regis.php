@@ -185,9 +185,9 @@ echo "<body onload='hide()'>";
           {
            echo "<select name='sel' onchange='func(this.value)'><option value='--' >"."--"."</option><option value='individual' >"."Individual event"."</option><option value='team' >Team</option></select>";
            echo "<div id='team_regis'>
-             ADD TEAM NAME
+             ADD TEAM NAME<br>
              <p><input type='text' name='team_name' id='team_name_field'></p>
-             ADD PLAYERS ROLL NUMBERS
+             ADD PLAYERS ROLL NUMBERS<br>
              <p>
              <input type='text' name='name1' id='player_name_field1'><br>
              <input type='text' name='name2' id='player_name_field2'><br>
@@ -212,7 +212,8 @@ echo "<body onload='hide()'>";
             echo "<div id='indi_regis'>
              <p id='add2'>PLAYER NAME<br>
              
-             <input type='text' name='name16' id='player_name_field16'></p><br>
+             <input type='text' name='name16' id='player_name_field16'><br>
+             <input type='text' name='p16_name'></p><br>
              <p>CONTACT NUMBER<br>
              <input type='text' name='capt_contact_i1'></p><br>
             </div>";
@@ -222,7 +223,9 @@ echo "<body onload='hide()'>";
              echo "<div id='indi2'>
              <p id='add2'>
              ROLL
-             <input type='text' name='name16' ></p>
+             <input type='text' name='name16' >
+             NAME<br>
+             <input type='text' name='p16_name'></p>
              <p>CONTACT    
              <input type='text' name='capt_contact_i2'></p></div><br>";
           }
@@ -246,7 +249,7 @@ echo "<body onload='hide()'>";
              <input type='text' name='name10' ><br>
              <input type='text' name='name11' ><br>
              <input type='text' name='name12' ><br>
-             <input type='text' name='name13' ><br>
+             <input type='text' name='name13' ><br> 
              <input type='text' name='name14' ><br>
              <input type='text' name='name15' ><br></p>
             </div> 

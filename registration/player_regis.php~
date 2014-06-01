@@ -212,7 +212,8 @@ echo "<body onload='hide()'>";
             echo "<div id='indi_regis'>
              <p id='add2'>PLAYER NAME<br>
              
-             <input type='text' name='name16' id='player_name_field16'></p><br>
+             <input type='text' name='name16' id='player_name_field16'><br>
+             <input type='text' name='p16_name'></p><br>
              <p>CONTACT NUMBER<br>
              <input type='text' name='capt_contact_i1'></p><br>
             </div>";
@@ -222,7 +223,8 @@ echo "<body onload='hide()'>";
              echo "<div id='indi2'>
              <p id='add2'>
              ROLL
-             <input type='text' name='name16' ></p>
+             <input type='text' name='name16' >
+             <input type='text' name='p16_name'></p>
              <p>CONTACT    
              <input type='text' name='capt_contact_i2'></p></div><br>";
           }
@@ -246,7 +248,7 @@ echo "<body onload='hide()'>";
              <input type='text' name='name10' ><br>
              <input type='text' name='name11' ><br>
              <input type='text' name='name12' ><br>
-             <input type='text' name='name13' ><br>
+             <input type='text' name='name13' ><br> 
              <input type='text' name='name14' ><br>
              <input type='text' name='name15' ><br></p>
             </div> 
@@ -255,7 +257,8 @@ echo "<body onload='hide()'>";
              CAPTAIN CONTACT NO
              <input type='text' name='capt_contact_t2' id='cap_contact_field'><br>";
           }
-          //echo "missing";
+          echo "missing";
+          echo $_SESSION['male_female'];
        if($_SESSION['male_female']=="Both")
           {
           echo "<br><select name='male_female1'><option value='male'>Male</option><option value='female'>Female</option></select><br><br>";

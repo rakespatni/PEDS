@@ -595,7 +595,7 @@ input.submit {
 #news_upload{
      /* float:center;*/
       width:800px;
-      color:#000000;
+      color:#000000; 
       margin-left:150px; 
 }
 #ack{
@@ -614,4 +614,13 @@ input.submit {
 {
       color:green;
       
+}
+#rank
+{
+      margin-left:250px;
+      height:100px;
+}
+#rank_php
+{
+     margin-left:250px;
 }

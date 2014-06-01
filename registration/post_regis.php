@@ -1,8 +1,8 @@
 <?php                       //only for fresh registrants
 
-session_start();
+session_start(); 
 require_once "db.php";
-
+ 
 $event_id=$_SESSION['event_id'];
 
 if(($_SESSION['event_type']=="individual")||($_SESSION['event_type']=="Both"&&$_POST['sel']=="individual"))
@@ -71,7 +71,9 @@ echo $flag;
 $check=0;
 echo $_POST['name1'];
 echo $_POST['name16'];
-
+$indi_name=$_POST['p16_name'];
+$game_name=$_SESSION['game_name'];
+$male_female=$_SESSION['male_female'];
 
         $post=mysql_query("select * from team");    //getting the last team_id in database
         if($post)
@@ -86,8 +88,8 @@ echo $_POST['name16'];
          
 if($flag==0)      //can be removed
               {
- 	$post=mysql_query("insert into team (team_id,indi_or_team,team_captain_roll,team_captain_contact,p1) 
-                         values('$team_id','$indi_or_team','$p16','$capt_contact','$p16')") or die (mysql_error());
+ 	$post=mysql_query("insert into team (team_id,name,indi_or_team,team_captain_roll,team_captain_contact,p1,g_name,type) 
+                         values('$team_id','$indi_name','$indi_or_team','$p16','$capt_contact','$p16','$game_name','$male_female')") or die (mysql_error());
               }
 
 else
@@ -110,12 +112,12 @@ $post=mysql_query("select * from detailed_event_record ");
 	   
 		}
         	if($check==0)
-        		 mysql_query("insert into detailed_event_record values('$team_id','$game_name',100.0,'$event_id') ") 
+        		 mysql_query("insert into detailed_event_record values('$team_id','$game_name',10.0,'$event_id') ") 
                           or die(mysql_error());
 
 
 //posting in plays_game where overall points and rank is stored
-$post=mysql_query("insert into plays_game (team_id,g_name,total_points,rank) values('$team_id','$game_name',100.0,100) ") 
+$post=mysql_query("insert into plays_game (team_id,g_name,total_points,rank) values('$team_id','$game_name',10.0,0) ") 
       or die (mysql_error());
 
 

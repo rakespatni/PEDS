@@ -180,7 +180,7 @@ img {
 
 body { 
 	font: .8em Arial, Verdana, Tahoma, Sans-Serif; 
-	background: #f4f4f4 url(../images/bgtile.jpg) repeat-x; 
+	/*background: #f4f4f4 url(../images/bgtile.jpg) repeat-x;*/ 
 	color: #555; 
 }
 
@@ -595,7 +595,7 @@ input.submit {
 #news_upload{
      /* float:center;*/
       width:800px;
-      color:#000000;
+      color:#000000; 
       margin-left:150px; 
 }
 #ack{
@@ -614,4 +614,9 @@ input.submit {
 {
       color:green;
       
+}
+#rank
+{
+      margin-left:250px;
+      height:100px;
 }

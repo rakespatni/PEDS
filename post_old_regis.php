@@ -8,6 +8,7 @@ $event_id=$_SESSION['event_id'];
 $game_name=$_SESSION['game_name'];
 
 mysql_query("insert into detailed_event_record values('$team_id','$game_name',100.0,'$event_id') ") or die(mysql_error());
-
+echo "successfully entered";
 mysql_close($con);
 ?>
+
